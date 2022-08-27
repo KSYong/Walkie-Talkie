@@ -47,6 +47,9 @@ class MainViewController: UIViewController {
         confirmUserNameButton.clipsToBounds = true
         confirmUserNameButton.layer.cornerRadius = 10
         
+        confirmUserNameButton.backgroundColor = UIColor(red: 100/255, green: 149/255, blue: 237/255, alpha: 1)
+        
+        confirmUserNameButton.setTitleColor(.white, for: .normal)
     }
     
     /// 이름 정하기 버튼 터치 시 실행되는 함수
@@ -58,9 +61,12 @@ class MainViewController: UIViewController {
             return
         }
         
-        userNameLabel.text = nameText
+        if nameText == "" {
+            userNameLabel.text = "이름이 없습니다! 내 이름은...?"
+        } else {
+            userNameLabel.text = nameText
+        }
     }
-    
 }
 
 // MARK: - UITextField Delegate
@@ -83,7 +89,7 @@ extension MainViewController: UITextFieldDelegate {
     
     // 텍스트필드 입력 글자 수 8자로 제한
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if (textField.text?.count)! + string.count > 8 {
+        if (textField.text?.count)! + string.count > 10 {
             return false
         } else {
             return true
