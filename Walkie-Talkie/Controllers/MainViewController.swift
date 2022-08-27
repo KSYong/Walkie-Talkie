@@ -48,7 +48,6 @@ class MainViewController: UIViewController {
         confirmUserNameButton.layer.cornerRadius = 10
         
         confirmUserNameButton.backgroundColor = UIColor(red: 100/255, green: 149/255, blue: 237/255, alpha: 1)
-        
         confirmUserNameButton.setTitleColor(.white, for: .normal)
     }
     

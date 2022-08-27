@@ -17,21 +17,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gxR-BP-giG">
-                                <rect key="frame" x="20" y="321.5" width="374" height="50"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="본인이 사용할 이름을 입력하세요!" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rP8-Uk-hRy">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="본인이 사용할 이름을 입력하세요!" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rP8-Uk-hRy">
+                                <rect key="frame" x="100.5" y="408" width="213" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="OVz-2v-m4Z"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="YoJ-v8-PaH"/>
                                 </constraints>
-                            </stackView>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내 이름은..?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZc-j0-Eui">
-                                <rect key="frame" x="152.5" y="244" width="109.5" height="27.5"/>
+                                <rect key="frame" x="152.5" y="310.5" width="109" height="27.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="xdB-gm-I5B"/>
                                 </constraints>
@@ -40,10 +35,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hrx-Od-tTQ">
-                                <rect key="frame" x="157" y="411.5" width="100" height="30"/>
+                                <rect key="frame" x="162" y="518" width="90" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="9DI-uL-yiz"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="yji-sx-m4I"/>
+                                    <constraint firstAttribute="width" constant="90" id="Xte-7W-Llh"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="이름 정하기!"/>
@@ -55,13 +49,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="gxR-BP-giG" firstAttribute="top" secondItem="mZc-j0-Eui" secondAttribute="bottom" constant="50" id="1uU-Wd-cFt"/>
-                            <constraint firstItem="Hrx-Od-tTQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1xY-Bx-AYd"/>
-                            <constraint firstItem="mZc-j0-Eui" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="8fi-Nn-q2Q"/>
-                            <constraint firstItem="Hrx-Od-tTQ" firstAttribute="top" secondItem="gxR-BP-giG" secondAttribute="bottom" constant="40" id="EFA-pZ-Bh1"/>
-                            <constraint firstItem="mZc-j0-Eui" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oKU-7u-3no"/>
-                            <constraint firstItem="gxR-BP-giG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="vRW-mD-oFF"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gxR-BP-giG" secondAttribute="trailing" constant="20" id="x5k-PR-C5z"/>
+                            <constraint firstItem="Hrx-Od-tTQ" firstAttribute="top" secondItem="rP8-Uk-hRy" secondAttribute="bottom" constant="70" id="85c-xv-YaP"/>
+                            <constraint firstItem="mZc-j0-Eui" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Xdg-qa-qQN"/>
+                            <constraint firstItem="rP8-Uk-hRy" firstAttribute="top" secondItem="mZc-j0-Eui" secondAttribute="bottom" constant="70" id="dKF-BB-ivC"/>
+                            <constraint firstItem="Hrx-Od-tTQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iTN-NA-AEU"/>
+                            <constraint firstItem="rP8-Uk-hRy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-20" id="jYJ-rg-wTF"/>
+                            <constraint firstItem="rP8-Uk-hRy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="u2j-SR-juW"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="상대 찾기" id="Azf-C8-V6v"/>
