@@ -9,23 +9,27 @@
 /* Begin PBXBuildFile section */
 		60A6AAA628B9060200150AF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A6AAA528B9060200150AF2 /* AppDelegate.swift */; };
 		60A6AAA828B9060200150AF2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A6AAA728B9060200150AF2 /* SceneDelegate.swift */; };
-		60A6AAAA28B9060200150AF2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A6AAA928B9060200150AF2 /* ViewController.swift */; };
+		60A6AAAA28B9060200150AF2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A6AAA928B9060200150AF2 /* MainViewController.swift */; };
 		60A6AAAD28B9060200150AF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60A6AAAB28B9060200150AF2 /* Main.storyboard */; };
 		60A6AAB028B9060200150AF2 /* Walkie_Talkie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 60A6AAAE28B9060200150AF2 /* Walkie_Talkie.xcdatamodeld */; };
 		60A6AAB228B9060400150AF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60A6AAB128B9060400150AF2 /* Assets.xcassets */; };
 		60A6AAB528B9060400150AF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60A6AAB328B9060400150AF2 /* LaunchScreen.storyboard */; };
+		60A6AAC628B9BD4700150AF2 /* WalkieTalkieData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A6AAC428B9BD4700150AF2 /* WalkieTalkieData+CoreDataClass.swift */; };
+		60A6AAC728B9BD4700150AF2 /* WalkieTalkieData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A6AAC528B9BD4700150AF2 /* WalkieTalkieData+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		60A6AAA228B9060200150AF2 /* Walkie-Talkie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Walkie-Talkie.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60A6AAA528B9060200150AF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60A6AAA728B9060200150AF2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		60A6AAA928B9060200150AF2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		60A6AAA928B9060200150AF2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		60A6AAAC28B9060200150AF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		60A6AAAF28B9060200150AF2 /* Walkie_Talkie.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Walkie_Talkie.xcdatamodel; sourceTree = "<group>"; };
 		60A6AAB128B9060400150AF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		60A6AAB428B9060400150AF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		60A6AAB628B9060400150AF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60A6AAC428B9BD4700150AF2 /* WalkieTalkieData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WalkieTalkieData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		60A6AAC528B9BD4700150AF2 /* WalkieTalkieData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WalkieTalkieData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +64,10 @@
 			children = (
 				60A6AAA528B9060200150AF2 /* AppDelegate.swift */,
 				60A6AAA728B9060200150AF2 /* SceneDelegate.swift */,
-				60A6AAA928B9060200150AF2 /* ViewController.swift */,
+				60A6AABF28B909F300150AF2 /* Networking */,
+				60A6AABC28B909D200150AF2 /* Models */,
+				60A6AABD28B909D800150AF2 /* Views */,
+				60A6AABE28B909E200150AF2 /* Controllers */,
 				60A6AAAB28B9060200150AF2 /* Main.storyboard */,
 				60A6AAB128B9060400150AF2 /* Assets.xcassets */,
 				60A6AAB328B9060400150AF2 /* LaunchScreen.storyboard */,
@@ -68,6 +75,37 @@
 				60A6AAAE28B9060200150AF2 /* Walkie_Talkie.xcdatamodeld */,
 			);
 			path = "Walkie-Talkie";
+			sourceTree = "<group>";
+		};
+		60A6AABC28B909D200150AF2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				60A6AAC428B9BD4700150AF2 /* WalkieTalkieData+CoreDataClass.swift */,
+				60A6AAC528B9BD4700150AF2 /* WalkieTalkieData+CoreDataProperties.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		60A6AABD28B909D800150AF2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		60A6AABE28B909E200150AF2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				60A6AAA928B9060200150AF2 /* MainViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		60A6AABF28B909F300150AF2 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,8 +180,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				60A6AAB028B9060200150AF2 /* Walkie_Talkie.xcdatamodeld in Sources */,
-				60A6AAAA28B9060200150AF2 /* ViewController.swift in Sources */,
+				60A6AAAA28B9060200150AF2 /* MainViewController.swift in Sources */,
+				60A6AAC628B9BD4700150AF2 /* WalkieTalkieData+CoreDataClass.swift in Sources */,
 				60A6AAA628B9060200150AF2 /* AppDelegate.swift in Sources */,
+				60A6AAC728B9BD4700150AF2 /* WalkieTalkieData+CoreDataProperties.swift in Sources */,
 				60A6AAA828B9060200150AF2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
