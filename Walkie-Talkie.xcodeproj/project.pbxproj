@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6044A40828C1D40500AFFD1C /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6044A40728C1D40500AFFD1C /* UIView+Extensions.swift */; };
 		60A6AAA628B9060200150AF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A6AAA528B9060200150AF2 /* AppDelegate.swift */; };
 		60A6AAA828B9060200150AF2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A6AAA728B9060200150AF2 /* SceneDelegate.swift */; };
 		60A6AAAA28B9060200150AF2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A6AAA928B9060200150AF2 /* MainViewController.swift */; };
@@ -16,9 +17,11 @@
 		60A6AAB528B9060400150AF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60A6AAB328B9060400150AF2 /* LaunchScreen.storyboard */; };
 		60A6AAC628B9BD4700150AF2 /* WalkieTalkieData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A6AAC428B9BD4700150AF2 /* WalkieTalkieData+CoreDataClass.swift */; };
 		60A6AAC728B9BD4700150AF2 /* WalkieTalkieData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A6AAC528B9BD4700150AF2 /* WalkieTalkieData+CoreDataProperties.swift */; };
+		60A6AAC928BA42FD00150AF2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A6AAC828BA42FD00150AF2 /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6044A40728C1D40500AFFD1C /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		60A6AAA228B9060200150AF2 /* Walkie-Talkie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Walkie-Talkie.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60A6AAA528B9060200150AF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60A6AAA728B9060200150AF2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +33,7 @@
 		60A6AAB628B9060400150AF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60A6AAC428B9BD4700150AF2 /* WalkieTalkieData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WalkieTalkieData+CoreDataClass.swift"; sourceTree = "<group>"; };
 		60A6AAC528B9BD4700150AF2 /* WalkieTalkieData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WalkieTalkieData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		60A6AAC828BA42FD00150AF2 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,7 @@
 			children = (
 				60A6AAC428B9BD4700150AF2 /* WalkieTalkieData+CoreDataClass.swift */,
 				60A6AAC528B9BD4700150AF2 /* WalkieTalkieData+CoreDataProperties.swift */,
+				60A6AAC828BA42FD00150AF2 /* CoreDataManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -97,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				60A6AAA928B9060200150AF2 /* MainViewController.swift */,
+				6044A40728C1D40500AFFD1C /* UIView+Extensions.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -184,6 +190,8 @@
 				60A6AAC628B9BD4700150AF2 /* WalkieTalkieData+CoreDataClass.swift in Sources */,
 				60A6AAA628B9060200150AF2 /* AppDelegate.swift in Sources */,
 				60A6AAC728B9BD4700150AF2 /* WalkieTalkieData+CoreDataProperties.swift in Sources */,
+				60A6AAC928BA42FD00150AF2 /* CoreDataManager.swift in Sources */,
+				6044A40828C1D40500AFFD1C /* UIView+Extensions.swift in Sources */,
 				60A6AAA828B9060200150AF2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

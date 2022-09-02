@@ -87,8 +87,16 @@ extension MainViewController: UITextFieldDelegate {
     }
     
     // 텍스트필드 입력 글자 수 8자로 제한
+    // 또한 텍스트필드에 문자열을 입력할 떄 마다 "내 이름은...?" 문자열이 실시간으로 입력한 문자로 바뀐다.
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if (textField.text?.count)! + string.count > 10 {
+        
+        // 붙여넣기 막기
+        if string.count > 1 {
+            textField.shake()
+            return false
+        }
+
+        if (textField.text?.count)! + string.count > 5 {
             return false
         } else {
             return true
