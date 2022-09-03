@@ -13,7 +13,7 @@ public enum BorderSide {
 
 extension UIView { // textField 흔들기
     func shake() {
-        UIView.animate(withDuration: 0.6, animations: {
+        UIView.animate(withDuration: 0.3, animations: {
             self.addBorder(side: .bottom, color: .red, width: 1.0)
             self.addBorder(side: .top, color: .red, width: 1.0)
             self.addBorder(side: .left, color: .red, width: 1.0)
@@ -28,8 +28,8 @@ extension UIView { // textField 흔들기
         })
         let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
         animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
-        animation.duration = 0.6
-        animation.values = [-10.0, 10.0, -10.0, 10.0, -10.0, 10.0, -5.0, 5.0, 0.0 ]
+        animation.duration = 0.3
+        animation.values = [-5.0, 5.0, -5.0, 5.0, -5.0, 5.0, -5.0, 5.0, 0.0 ]
         layer.add(animation, forKey: "shake")
     }
 }
