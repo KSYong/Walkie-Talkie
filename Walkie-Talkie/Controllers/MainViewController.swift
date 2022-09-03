@@ -85,7 +85,13 @@ extension MainViewController: UITextFieldDelegate {
     // 텍스트필드 입력 끝나면 테두리 강조 해제
     func textFieldDidEndEditing(_ textField: UITextField) {
         userNameTextField.layer.borderWidth = 0
-
+        
+    }
+    
+    // 텍스트필드가 클리어되면 라벨도 클리어
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        userNameLabel.text = "내 이름은...?"
+        return true
     }
     
     // MARK: TO DO
