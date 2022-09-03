@@ -8,7 +8,7 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
+    
     // MARK: - Properites
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userNameTextField: UITextField!
@@ -38,7 +38,7 @@ class MainViewController: UIViewController {
         
         // 한 번에 삭제 모드 추가
         userNameTextField.clearButtonMode = .whileEditing
-       
+        
         // 자동 문법 교정 없애기
         userNameTextField.autocorrectionType = .no
         userNameTextField.autocapitalizationType = .none
@@ -84,6 +84,7 @@ extension MainViewController: UITextFieldDelegate {
     // 텍스트필드 입력 끝나면 테두리 강조 해제
     func textFieldDidEndEditing(_ textField: UITextField) {
         userNameTextField.layer.borderWidth = 0
+
     }
     
     // 텍스트필드 입력 글자 수 8자로 제한
@@ -95,11 +96,20 @@ extension MainViewController: UITextFieldDelegate {
             textField.shake()
             return false
         }
-
-        if (textField.text?.count)! + string.count > 5 {
-            return false
-        } else {
+        
+        // 백스페이스 가능!
+        if string.isEmpty {
             return true
         }
+        
+        // 글자 수 제한
+        guard textField.text!.count < 8 else {
+            textField.shake()
+            return false
+        }
+        
+        // 이름 라벨에 표시되는 텍스트 수정하기c
+        userNameLabel.text = textField.text! + string
+        return true
     }
 }
