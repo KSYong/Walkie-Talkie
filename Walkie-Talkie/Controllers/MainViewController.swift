@@ -114,13 +114,19 @@ extension MainViewController: UITextFieldDelegate {
             return true
         }
         
+        // 특문이 있다면 false
+        if !string.hasCharacters() {
+            textField.shake()
+            return false
+        }
+
         // 글자 수 제한
         guard textField.text!.count < 8 else {
             textField.shake()
             return false
         }
         
-        // 이름 라벨에 표시되는 텍스트 수정하기c
+        // 이름 라벨에 표시되는 텍스트 수정하기!
         userNameLabel.text = textField.text! + string
         return true
     }
