@@ -24,6 +24,7 @@ class MainViewController: UIViewController {
     /// 델리게이트 설정 함수
     func setup() {
         userNameTextField.delegate = self
+        userNameTextField.keyboardType = .alphabet
     }
     
     // UI 설정 함수
