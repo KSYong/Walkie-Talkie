@@ -99,6 +99,7 @@ extension MainViewController: UITextFieldDelegate {
         
         // 백스페이스 가능!
         if string.isEmpty {
+            userNameLabel.text = String(textField.text!.dropLast())
             return true
         }
         
