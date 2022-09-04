@@ -99,8 +99,7 @@ extension MainViewController: UITextFieldDelegate {
     }
     
     // MARK: TO DO
-    // 텍스트필드에 입력가능한 문자에 한글 / 한자도 추가
-    // 한글의 경우 현재는 최대 문자 제한을 깔끔하게 하는 것에 문제가 있음.
+    // 한글의 경우 최대 문자 제한을 깔끔하게 하기.
     
     // 텍스트필드 입력 글자 수 8자로 제한
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
