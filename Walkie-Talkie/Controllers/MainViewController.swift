@@ -52,9 +52,20 @@ class MainViewController: UIViewController {
         confirmUserNameButton.setTitleColor(.white, for: .normal)
     }
     
-    /// 이름 정하기 버튼 터치 시 실행되는 함수
+    /// 이름 정하기 버튼을 탭하면 이름 확정을 여부를 묻는 팝업 후, 다음 화면으로 이동
     /// - Parameter sender: 터치한 버튼 객체
     @IBAction func confirmNameButtonTapped(_ sender: UIButton) {
+        
+        lazy var alert = UIAlertController(title: "\(userNameLabel.text!)", message: "정말 이 이름으로 하시겠습니까?", preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "네!", style: .destructive, handler: {_ in
+            // 다음 화면 present 하기
+            self.performSegue(withIdentifier: "toRadioVC", sender: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "아니오!", style: .cancel, handler: { _ in
+            // 이름 다시 설정하도록 namelabel 바꾸기?
+        }))
+        
         guard let nameText = userNameTextField.text else {
             print("텍스트 내용 없음")
             userNameLabel.text = "이름이 없습니다! 이름을 정해주세요"
@@ -64,7 +75,7 @@ class MainViewController: UIViewController {
         if nameText == "" {
             userNameLabel.text = "이름이 없습니다! 내 이름은...?"
         } else {
-            userNameLabel.text = nameText
+            present(alert, animated: true)
         }
     }
 }

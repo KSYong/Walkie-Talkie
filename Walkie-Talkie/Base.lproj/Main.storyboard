@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -61,14 +62,91 @@
                         <outlet property="confirmUserNameButton" destination="Hrx-Od-tTQ" id="Tl4-6P-31x"/>
                         <outlet property="userNameLabel" destination="mZc-j0-Eui" id="yVo-ox-TtA"/>
                         <outlet property="userNameTextField" destination="rP8-Uk-hRy" id="isQ-j7-jcI"/>
+                        <segue destination="eUU-WP-mH0" kind="show" identifier="toRadioVC" id="ga1-qa-yvM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="939.13043478260875" y="115.84821428571428"/>
         </scene>
+        <!--Radio View Controller-->
+        <scene sceneID="lOG-In-aPT">
+            <objects>
+                <viewController modalPresentationStyle="currentContext" id="eUU-WP-mH0" customClass="RadioViewController" customModule="Walkie_Talkie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RsP-9Z-4Bd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pAW-Wz-qAn">
+                                <rect key="frame" x="50" y="378" width="314" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="QFH-Jd-HgM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="VFH-v1-cLn">
+                                <rect key="frame" x="94.5" y="613" width="225" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZeW-SB-nfy">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal">
+                                            <imageReference key="image" image="chevron.down" catalog="system" symbolScale="medium"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50" weight="light"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3D-a1-er6">
+                                        <rect key="frame" x="125" y="0.0" width="100" height="100"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal">
+                                            <imageReference key="image" image="chevron.up" catalog="system" symbolScale="medium"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50" weight="light"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="GDU-ow-7y7"/>
+                                    <constraint firstAttribute="width" constant="225" id="YhR-wR-UcW"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QlH-UF-gDA">
+                                <rect key="frame" x="137" y="96" width="140" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="msz-bl-sRo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pAW-Wz-qAn" firstAttribute="leading" secondItem="msz-bl-sRo" secondAttribute="leading" constant="50" id="H6Z-Ua-kpF"/>
+                            <constraint firstItem="VFH-v1-cLn" firstAttribute="top" secondItem="pAW-Wz-qAn" secondAttribute="bottom" constant="135" id="dto-yd-3dW"/>
+                            <constraint firstItem="pAW-Wz-qAn" firstAttribute="centerY" secondItem="RsP-9Z-4Bd" secondAttribute="centerY" constant="-20" id="ivf-V4-rPe"/>
+                            <constraint firstItem="VFH-v1-cLn" firstAttribute="centerX" secondItem="RsP-9Z-4Bd" secondAttribute="centerX" id="r40-ja-Ieo"/>
+                            <constraint firstItem="msz-bl-sRo" firstAttribute="trailing" secondItem="pAW-Wz-qAn" secondAttribute="trailing" constant="50" id="uWR-gF-dDn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="lYF-Yy-8dW"/>
+                    <connections>
+                        <outlet property="downButton" destination="ZeW-SB-nfy" id="jk4-Eu-uKr"/>
+                        <outlet property="frequencyTextField" destination="pAW-Wz-qAn" id="s86-an-SJo"/>
+                        <outlet property="upButton" destination="h3D-a1-er6" id="4kn-26-5X7"/>
+                        <outlet property="userNameLabel" destination="QlH-UF-gDA" id="xLI-rj-QTt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P8z-iw-hrh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1824.6376811594205" y="115.84821428571428"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="chevron.down" catalog="system" width="128" height="72"/>
+        <image name="chevron.up" catalog="system" width="128" height="72"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
