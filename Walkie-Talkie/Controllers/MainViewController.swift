@@ -21,10 +21,10 @@ class MainViewController: UIViewController {
         configureUI()
     }
     
-    /// 델리게이트 설정 함수
+    // 기본적인 설정 함수
     func setup() {
         userNameTextField.delegate = self
-        userNameTextField.keyboardType = .alphabet
+        self.userNameTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
     }
     
     // UI 설정 함수
@@ -94,12 +94,15 @@ extension MainViewController: UITextFieldDelegate {
         return true
     }
     
+    @objc func textFieldDidChange(_ sender: Any?) {
+        userNameLabel.text = userNameTextField.text
+    }
+    
     // MARK: TO DO
     // 텍스트필드에 입력가능한 문자에 한글 / 한자도 추가
     // 한글의 경우 현재는 최대 문자 제한을 깔끔하게 하는 것에 문제가 있음.
     
     // 텍스트필드 입력 글자 수 8자로 제한
-    // 또한 텍스트필드에 문자열을 입력할 떄 마다 "내 이름은...?" 문자열이 실시간으로 입력한 문자로 바뀐다.
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         // 붙여넣기 막기
@@ -110,7 +113,6 @@ extension MainViewController: UITextFieldDelegate {
         
         // 백스페이스 가능!
         if string.isEmpty {
-            userNameLabel.text = String(textField.text!.dropLast())
             return true
         }
         
@@ -126,8 +128,6 @@ extension MainViewController: UITextFieldDelegate {
             return false
         }
         
-        // 이름 라벨에 표시되는 텍스트 수정하기!
-        userNameLabel.text = textField.text! + string
         return true
     }
 }
