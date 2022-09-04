@@ -8,15 +8,18 @@
 import UIKit
 
 class RadioViewController: UIViewController {
+    
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var frequencyTextField: UITextField!
     @IBOutlet weak var upButton: UIButton!
     @IBOutlet weak var downButton: UIButton!
     
+    var nameText: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        userNameLabel.text = nameText
         // Do any additional setup after loading the view.
     }
     

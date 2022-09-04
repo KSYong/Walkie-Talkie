@@ -78,6 +78,15 @@ class MainViewController: UIViewController {
             present(alert, animated: true)
         }
     }
+    
+    // 세그웨이를 통한 뷰컨 이동 시 데이터 전달
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toRadioVC" {
+            if let radioVC = segue.destination as? RadioViewController {
+                radioVC.nameText = userNameLabel.text!
+            }
+        }
+    }
 }
 
 // MARK: - UITextField Delegate
