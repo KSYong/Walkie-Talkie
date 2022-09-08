@@ -5,7 +5,7 @@
 //  Created by SEUNGYONG KWON on 2022/09/08.
 //
 
-import Foundation
+import Network
 import CryptoKit
 
 extension NWParameters {

@@ -29,7 +29,7 @@ class PeerBrowser {
     // delgate를 사용하여 browsing 객체를 생성하기
     init(delegate: PeerBrowserDelegate) {
         // PeerBrowser 객체를 생성하여 사용할 뷰 컨트롤러에서 선언한 델리게이트를 인자로 받아와
-        // 특정 동작들을 뷰 컨트롤러로 책임 넘기기
+        // 특정 동작들을 뷰 컨트롤러로 위임하기
         self.delegate = delegate
         startBrowsing()
     }

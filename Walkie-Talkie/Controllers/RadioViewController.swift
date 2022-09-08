@@ -6,32 +6,35 @@
 //
 
 import UIKit
+import Network
 
 class RadioViewController: UIViewController {
-    
-    @IBOutlet weak var userNameLabel: UILabel!
-    @IBOutlet weak var frequencyTextField: UITextField!
-    @IBOutlet weak var upButton: UIButton!
-    @IBOutlet weak var downButton: UIButton!
-    
-    var nameText: String?
+
+    @IBOutlet weak var othersTableView: UITableView!
+
+    var userName: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        userNameLabel.text = nameText
-        // Do any additional setup after loading the view.
     }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+}
+
+extension RadioViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
     }
-    */
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
+     
+}
 
+extension RadioViewController: UITableViewDelegate {
+    
+    
 }

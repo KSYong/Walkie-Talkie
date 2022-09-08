@@ -56,12 +56,16 @@ class MainViewController: UIViewController {
     /// - Parameter sender: 터치한 버튼 객체
     @IBAction func confirmNameButtonTapped(_ sender: UIButton) {
         
+        // 이름 선택 시 alert 띄우기
         lazy var alert = UIAlertController(title: "\(userNameLabel.text!)", message: "정말 이 이름으로 하시겠습니까?", preferredStyle: .actionSheet)
         
+        // 네 선텍 시 액션 추가
         alert.addAction(UIAlertAction(title: "네!", style: .destructive, handler: {_ in
             // 다음 화면 present 하기
             self.performSegue(withIdentifier: "toRadioVC", sender: nil)
         }))
+        
+        // 아니오 선택 시 액션 추가
         alert.addAction(UIAlertAction(title: "아니오!", style: .cancel, handler: { _ in
             // 이름 다시 설정하도록 namelabel 바꾸기?
         }))
@@ -79,11 +83,12 @@ class MainViewController: UIViewController {
         }
     }
     
-    // 세그웨이를 통한 뷰컨 이동 시 데이터 전달
+    // 세그웨이를 통한 뷰컨 이동 시 유저 이름 데이터 전달
+    // 또한 피어 브라우징 시작
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toRadioVC" {
             if let radioVC = segue.destination as? RadioViewController {
-                radioVC.nameText = userNameLabel.text!
+                radioVC.userName = self.userNameLabel.text
             }
         }
     }
