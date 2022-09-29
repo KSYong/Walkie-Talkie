@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import AVFAudio
+import AVFoundation
 
 extension Data {
     init(buffer: AVAudioPCMBuffer, time: AVAudioTime) {

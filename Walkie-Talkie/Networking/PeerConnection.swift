@@ -101,7 +101,7 @@ class PeerConnection {
     }
     
     /// 저장된 버퍼 데이터를 전송하는 함수이다.
-    /// - Parameter buffer: AVAudioPCMBuffer를 Data 타입으로 변혼한 데이터.
+    /// - Parameter buffer: 를 Data 타입으로 변환한 데이터.
     func sendRecordedBuffer(buffer: Data){
         guard let connection = connection else {
             print("connection optional unwrap failed: sendRecordedAudio")
