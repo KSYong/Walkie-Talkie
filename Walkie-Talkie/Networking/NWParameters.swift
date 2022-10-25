@@ -11,22 +11,22 @@ import CryptoKit
 extension NWParameters {
     
     // 주파수를 인자로 받아서 NWParameters 객체를 생성하는 init 구현
-    convenience init(frequency: String) {
+    convenience init(name: String) {
         
         let udpOptions = NWProtocolUDP.Options()
         
         // 커스텀 DTLS와 UDP 옵션으로 NWParameters 생성
-        self.init(dtls: NWParameters.dtlsOptions(frequency: frequency), udp: udpOptions)
+        self.init(dtls: NWParameters.dtlsOptions(name: name), udp: udpOptions)
         
         // p2p 링크 사용 허용
         self.includePeerToPeer = true
     }
     
     // frequency를 사용해 pre-shared key를 만드는 커스텀 dtls 옵션 구현
-    private static func dtlsOptions(frequency: String) -> NWProtocolTLS.Options {
+    private static func dtlsOptions(name: String) -> NWProtocolTLS.Options {
         let tlsOptions = NWProtocolTLS.Options()
         
-        let authenticationKey = SymmetricKey(data: frequency.data(using: .utf8)!)
+        let authenticationKey = SymmetricKey(data: name.data(using: .utf8)!)
         var authenticationCode = HMAC<SHA256>.authenticationCode(for: "SimplePeertoPeer".data(using: .utf8)!, using: authenticationKey)
         
         let authenticationDispatchData = withUnsafeBytes(of: &authenticationCode) {

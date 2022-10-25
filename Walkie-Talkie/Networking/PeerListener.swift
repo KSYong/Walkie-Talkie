@@ -17,19 +17,16 @@ class PeerListener {
     weak var delegate: PeerConnectionDelegate?
     var listener: NWListener?
     var name: String
-    var frequency: String
     
     /**
      listener 생성
      
      - parameter name: name to advertise
-     - parameter frequency: frequency for authentication and advertise
      - parameter delegate: delegate to handle inbound connections
      */
-    init(name: String, frequency: String, delegate: PeerConnectionDelegate) {
+    init(name: String, delegate: PeerConnectionDelegate) {
         self.delegate = delegate
         self.name = name
-        self.frequency = frequency
         
         startListening()
     }
@@ -39,12 +36,14 @@ class PeerListener {
      */
     func startListening() {
         do {
-            // listener 객체 생성
-            let listener = try NWListener(using: NWParameters(frequency: frequency))
+            /*
+             extension에 정의한 NWParameters init으로 NWListener 객체 생성
+             */
+            let listener = try NWListener(using: NWParameters(name: self.name))
             self.listener = listener
             
             // advertise 할 서비스 set
-            listener.service = NWListener.Service(name: self.name, type: "_simpleP2P._udp")
+            listener.service = NWListener.Service(name: self.name, type: "_walkieTalkie._udp")
             
             listener.stateUpdateHandler = { newState in
                 switch newState {
@@ -67,7 +66,9 @@ class PeerListener {
                 }
             }
             
+            // 새로운 연결이 수립되었을 때
             listener.newConnectionHandler = { newConnection in
+                // delegate가 정상적으로 있다면
                 if let delegate = self.delegate {
                     // 연결된 connection이 없다면 connection 생성
                     if sharedConnection == nil {
@@ -94,7 +95,7 @@ class PeerListener {
         self.name = name
         if let listener = listener {
             // advertise할 서비스 reset
-            listener.service = NWListener.Service(name: self.name, type: "_simpleP2P._udp")
+            listener.service = NWListener.Service(name: self.name, type: "_walkieTalkie._udp")
         }
     }
 }

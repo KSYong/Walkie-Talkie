@@ -89,6 +89,7 @@ class MainViewController: UIViewController {
         if segue.identifier == "toRadioVC" {
             if let radioVC = segue.destination as? RadioViewController {
                 radioVC.userName = self.userNameLabel.text
+                
             }
         }
     }

@@ -10,6 +10,7 @@ import Network
 
 class RadioViewController: UIViewController {
     
+    @IBOutlet weak var mainLabel: UILabel!
     @IBOutlet weak var othersTableView: UITableView!
     
     var userName: String?
@@ -17,22 +18,57 @@ class RadioViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        othersTableView.dataSource = self
+        othersTableView.delegate = self
+        
+        // 이 화면에 진입하는 순간 자동으로 listener / browser 생성
+        if sharedBrowser == nil {
+            sharedBrowser = PeerBrowser(delegate: self)
+        }
+        if let listener = sharedListener {
+            listener.resetName(userName!)
+        } else {
+            sharedListener = PeerListener(name: userName!, delegate: self)
+        }
     }
     
+    func resultRows() -> Int {
+        if results.isEmpty {
+            return 1
+        } else {
+            // 최대 8명의 peer까지 보이기
+            return min(results.count, 8)
+        }
+    }
 }
 
 
-// 현재는 테이블뷰로 구현w
+// 테이블뷰로 다른 peer들 뿌려주기
 // - 추후 좌우로 넘기며 선택하는 디자인 구현하고 싶음..
-//extension RadioViewController: UITableViewDataSource {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        <#code#>
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        <#code#>
-//    }
-//}
+extension RadioViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return resultRows()
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "joinRadioCell") as! PeerTableViewCell
+        
+        if results.isEmpty {
+            cell.peerNameLabel.text = "다른 사람을 찾는 중입니다..."
+            cell.peerNameLabel.textColor = .systemGray
+        } else {
+            let peerEndpoint = results[indexPath.row].endpoint
+            if case let NWEndpoint.service(name: userName, type: _, domain: _, interface: _) = peerEndpoint {
+                cell.peerNameLabel.text = userName
+            } else {
+                cell.peerNameLabel.text = "Unknown Endpoint..."
+            }
+        }
+        
+        return cell
+    }
+}
 
 extension RadioViewController: UITableViewDelegate {
     
@@ -67,3 +103,25 @@ extension RadioViewController: PeerBrowserDelegate {
     
 }
 
+extension RadioViewController: PeerConnectionDelegate {
+    func connectionReady() {
+        
+    }
+    
+    func connectionFailed() {
+        
+    }
+    
+    func connectionCanceled() {
+        
+    }
+    
+    func receivedAudio(data: Data) {
+        
+    }
+    
+    func displayAdvertiseError(_ error: NWError) {
+        
+    }
+    
+}

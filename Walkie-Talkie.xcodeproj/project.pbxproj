@@ -13,6 +13,7 @@
 		6043813928C8F9D500B9D685 /* NWParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6043813828C8F9D500B9D685 /* NWParameters.swift */; };
 		6043813B28C8FA2400B9D685 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6043813A28C8FA2400B9D685 /* Data+Extensions.swift */; };
 		6044A40828C1D40500AFFD1C /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6044A40728C1D40500AFFD1C /* UIView+Extensions.swift */; };
+		6090AC1528E53CA900E1174F /* PeerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6090AC1428E53CA900E1174F /* PeerTableViewCell.swift */; };
 		60A6AAA628B9060200150AF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A6AAA528B9060200150AF2 /* AppDelegate.swift */; };
 		60A6AAA828B9060200150AF2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A6AAA728B9060200150AF2 /* SceneDelegate.swift */; };
 		60A6AAAA28B9060200150AF2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A6AAA928B9060200150AF2 /* MainViewController.swift */; };
@@ -35,6 +36,7 @@
 		6043813A28C8FA2400B9D685 /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		6044A40728C1D40500AFFD1C /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		6083CB7128DE683E0034446D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		6090AC1428E53CA900E1174F /* PeerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerTableViewCell.swift; sourceTree = "<group>"; };
 		60A6AAA228B9060200150AF2 /* Walkie-Talkie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Walkie-Talkie.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60A6AAA528B9060200150AF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60A6AAA728B9060200150AF2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,8 +100,8 @@
 				60A6AABD28B909D800150AF2 /* Views */,
 				60A6AABE28B909E200150AF2 /* Controllers */,
 				60A6AAAB28B9060200150AF2 /* Main.storyboard */,
-				60A6AAB128B9060400150AF2 /* Assets.xcassets */,
 				60A6AAB328B9060400150AF2 /* LaunchScreen.storyboard */,
+				60A6AAB128B9060400150AF2 /* Assets.xcassets */,
 				60A6AAB628B9060400150AF2 /* Info.plist */,
 				60A6AAAE28B9060200150AF2 /* Walkie_Talkie.xcdatamodeld */,
 			);
@@ -119,6 +121,7 @@
 		60A6AABD28B909D800150AF2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6090AC1428E53CA900E1174F /* PeerTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60A6AAB028B9060200150AF2 /* Walkie_Talkie.xcdatamodeld in Sources */,
+				6090AC1528E53CA900E1174F /* PeerTableViewCell.swift in Sources */,
 				60A6AAAA28B9060200150AF2 /* MainViewController.swift in Sources */,
 				60A6AAC628B9BD4700150AF2 /* WalkieTalkieData+CoreDataClass.swift in Sources */,
 				60A6AAA628B9060200150AF2 /* AppDelegate.swift in Sources */,

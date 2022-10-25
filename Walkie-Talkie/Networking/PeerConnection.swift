@@ -26,12 +26,12 @@ class PeerConnection {
     let initiatedConnection: Bool
     
     // 유저가 워키토키 방을 만들면 outbound connection 생성
-    init(endpoint: NWEndpoint, interface: NWInterface?, frequency: String, delegate: PeerConnectionDelegate) {
+    init(endpoint: NWEndpoint, interface: NWInterface?, name: String, delegate: PeerConnectionDelegate) {
         self.delegate = delegate
         self.initiatedConnection = true
         
-        // frequency를 인자로 하는 NWParameters를 사용해 endpoint를 향한 NWConnection 수립
-        let connection = NWConnection(to: endpoint, using: NWParameters(frequency: frequency))
+        // name을 인자로 하는 NWParameters를 사용해 endpoint를 향한 NWConnection 수립
+        let connection = NWConnection(to: endpoint, using: NWParameters(name: name))
         self.connection = connection
         
         startConnection()

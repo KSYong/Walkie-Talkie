@@ -26,20 +26,34 @@ class PeerBrowser {
     weak var delegate: PeerBrowserDelegate?
     var browser: NWBrowser?
     
+    /*
+        NWBrowser?
+        가능한 네트워크 서비스 탐색을 위한 객체
+     */
+    
     // delgate를 사용하여 browsing 객체를 생성하기
     init(delegate: PeerBrowserDelegate) {
         // PeerBrowser 객체를 생성하여 사용할 뷰 컨트롤러에서 선언한 델리게이트를 인자로 받아와
         // 특정 동작들을 뷰 컨트롤러로 위임하기
         self.delegate = delegate
+        
         startBrowsing()
     }
     
     func startBrowsing() {
         // NWParameter 객체 생성
+        
+        /*
+            NWParameter?
+            연결을 위한 프로토콜, 데이터 전송 방법, 네트워크 경로 제약을 저장하고 있는 객체
+         */
+        
         let parameters = NWParameters()
+        
+        // P2P 연결 활성화
         parameters.includePeerToPeer = true
         
-        let browser = NWBrowser(for: .bonjour(type: "_simpleP2P._udp", domain: nil), using: parameters)
+        let browser = NWBrowser(for: .bonjour(type: "_walkieTalkie._udp", domain: nil), using: parameters)
         self.browser = browser
         
         // stateUpdateHandler 작성
