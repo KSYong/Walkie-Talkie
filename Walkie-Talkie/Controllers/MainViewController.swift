@@ -29,6 +29,7 @@ class MainViewController: UIViewController {
     
     // UI 설정 함수
     func configureUI() {
+        
         // 이름 입력란 텍스트필드 테두리 둥글게 처리
         userNameTextField.clipsToBounds = true
         userNameTextField.layer.cornerRadius = 8
@@ -46,7 +47,7 @@ class MainViewController: UIViewController {
         
         // 이름 정하는 버튼 테두리 둥글게 및 배경색 + 글자색 바꾸기
         confirmUserNameButton.clipsToBounds = true
-        confirmUserNameButton.layer.cornerRadius = 10
+        confirmUserNameButton.layer.cornerRadius = 20
         
         confirmUserNameButton.backgroundColor = UIColor(red: 100/255, green: 149/255, blue: 237/255, alpha: 1)
         confirmUserNameButton.setTitleColor(.white, for: .normal)
@@ -62,7 +63,7 @@ class MainViewController: UIViewController {
         // 네 선텍 시 액션 추가
         alert.addAction(UIAlertAction(title: "네!", style: .destructive, handler: {_ in
             // 다음 화면 present 하기
-            self.performSegue(withIdentifier: "toRadioVC", sender: nil)
+            self.performSegue(withIdentifier: "toSelectionVC", sender: nil)
         }))
         
         // 아니오 선택 시 액션 추가
@@ -86,8 +87,8 @@ class MainViewController: UIViewController {
     // 세그웨이를 통한 뷰컨 이동 시 유저 이름 데이터 전달
     // 또한 피어 브라우징 시작
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toRadioVC" {
-            if let radioVC = segue.destination as? RadioViewController {
+        if segue.identifier == "toSelectionVC" {
+            if let radioVC = segue.destination as? SelectionViewController {
                 radioVC.userName = self.userNameLabel.text
                 
             }
